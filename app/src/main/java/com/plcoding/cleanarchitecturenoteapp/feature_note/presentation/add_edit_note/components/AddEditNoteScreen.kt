@@ -1,10 +1,6 @@
 package com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.add_edit_note.components
 
-import android.graphics.drawable.Icon
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.compose.animation.Animatable
-import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -42,7 +38,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.model.Note
 import com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.add_edit_note.AddEditNoteEvent
-import com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.add_edit_note.AddEditViewModel
+import com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.add_edit_note.AddEditNoteViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -51,7 +47,7 @@ import kotlinx.coroutines.launch
 fun AddEditNoteScreen(
     navController: NavController,
     noteColor: Int,
-    viewModel: AddEditViewModel = hiltViewModel(),
+    viewModel: AddEditNoteViewModel = hiltViewModel(),
 ) {
     val titleState = viewModel.noteTitle.value
     val contentState = viewModel.noteContent.value
@@ -70,13 +66,13 @@ fun AddEditNoteScreen(
         viewModel.eventFlow.collectLatest { event ->
 
             when (event) {
-                is AddEditViewModel.UiEvent.ShowSnackBar -> {
+                is AddEditNoteViewModel.UiEvent.ShowSnackbar -> {
                     scaffoldState.snackbarHostState.showSnackbar(
                         message = event.message
                     )
                 }
 
-                is AddEditViewModel.UiEvent.SaveNote -> {
+                is AddEditNoteViewModel.UiEvent.SaveNote -> {
                     navController.navigateUp()
                 }
             }

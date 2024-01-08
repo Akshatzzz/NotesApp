@@ -63,7 +63,7 @@ fun OrderSection(
             Spacer(modifier = Modifier.width(8.dp))
             DefaultRadioButton(
                 text = "Descending",
-                selected = noteOrder is NoteOrder.Date,
+                selected = noteOrder.orderType is OrderType.Descending,
                 onSelect = {
                     onChange(noteOrder.copy(orderType = OrderType.Descending))
                 }
