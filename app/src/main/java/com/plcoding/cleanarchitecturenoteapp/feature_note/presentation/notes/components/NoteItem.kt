@@ -86,7 +86,7 @@ fun NoteItem(
         }
         IconButton(
             onClick = {
-                onDelete
+                onDelete.invoke()
             },
             modifier = Modifier.align(Alignment.BottomEnd)
         ) {
