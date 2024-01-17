@@ -1,5 +1,5 @@
+https://github.com/Akshatzzz/NotesApp/assets/65366822/765ad01a-5197-4529-a8e0-108c79973251
 
-![screen-20240117-223237-ezgif com-video-to-gif-converter](https://github.com/Akshatzzz/NotesApp/assets/65366822/840ba4c7-e031-4a62-ae0a-ecbc18e6a9bc)
 # CleanNotes App
 
 CleanNotes is a modern Android notes app built with Clean Architecture, MVVM pattern in Jetpack Compose. It provides a clean and intuitive interface for users to manage their notes efficiently. The app incorporates various features, including note creation, editing, sorting, and custom views, all while leveraging the power of animations and Dagger Hilt for dependency injection.
